@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Syne', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+    /* Moonlight Ambient Palette */
+    --color-milk: #FAF8F5;
+    --color-moon-cream: #FDFBF7;
+    --color-soft-lavender: #F3F1F7;
+    --color-soft-blue: #EBF3FA;
+    --color-dusty-rose: #F9ECEF;
+    --color-peach: #FBF0E8;
+    --color-lilac: #F4ECF8;
+    
+    /* Accents */
+    --color-deep-lavender: #6B5B95;
+    --color-plum: #58355E;
+    --color-warm-coral: #E07A5F;
+    --color-moon-glow: #FDF6E2;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF8F5;
+    background-image: 
+      radial-gradient(ellipse at 15% 0%, rgba(244, 236, 248, 0.7) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 15%, rgba(235, 243, 250, 0.7) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 60%, rgba(253, 246, 226, 0.4) 0%, transparent 60%),
+      radial-gradient(ellipse at 10% 85%, rgba(249, 236, 239, 0.6) 0%, transparent 50%);
+    background-attachment: fixed;
+    color: #2D2738;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Moonlight Glass Card */
+.moon-card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(237, 234, 243, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(107, 91, 149, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.moon-card-warm {
+  background: rgba(253, 251, 247, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(245, 237, 228, 0.9);
+  box-shadow: 0 4px 20px -2px rgba(224, 122, 95, 0.05);
+}
+
+.moon-glow-btn {
+  box-shadow: 0 4px 14px 0 rgba(107, 91, 149, 0.28);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.moon-glow-btn:active {
+  transform: scale(0.97);
+}
+
+/* Custom scrollbar hiding for horizontal chip rails */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe area utilities */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
